@@ -1,3 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 250px; /* Обмежуємо ширину картки */
+  width: 100%; /* Дозволяємо адаптуватися до сітки */
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 350px; /* Збільшуємо висоту для типових пропорцій постерів */
+  object-fit: cover; /* Зображення обрізається, зберігаючи пропорції */
+  border-radius: 5px;
+  display: block; /* Переконуємося, що зображення поводиться як блок */
+  aspect-ratio: 2 / 3; /* Фіксуємо співвідношення сторін 2:3 */
+}
+
+.movie-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.movie-card p {
+  margin: 5px 0;
+  color: #666;
+}
+
 /* Стилі для кінозалу */
 .cinema-hall {
   max-width: 800px;
@@ -98,8 +167,37 @@
   background-color: #1976d2;
 }
 
-/* Адаптивність для кінозалу */
+/* Стилі для шапки */
+.app-header {
+  background-color: #333;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+}
+
+.header-link h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-link:hover {
+  color: #ddd;
+}
+
+/* Адаптивність */
 @media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
   .seat {
     width: 30px;
     height: 30px;
