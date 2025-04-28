@@ -15,7 +15,7 @@ const Booking = () => {
     <div className="booking-page">
       <h1>Booking for {movie.title}</h1>
       <p>Session: {movie.sessionDateTime}</p>
-      <CinemaHall />
+      <CinemaHall movieId={id} />
       <Link to="/" className="back-link">
         Back to Home
       </Link>
